@@ -1,8 +1,8 @@
 public class Customer extends Person {
 private int level;
-private double amount1;
-private double amount2;
-private double profit;
+private static double amount1;
+private static double amount2;
+private static double profit;
 
 	public Customer(int id,String name,int age,char gender,level){
 		
@@ -40,11 +40,30 @@ private double profit;
 	public display (Customer c[]){
 		
 		for(i=0; i < c.length; i++){
-			System.out.println(c[i].id);
-			System.out.println(c[i].name);
-			System.out.println(c[i].age);
-			System.out.println(p[i].gender);
+			System.out.println(c[i].level);
+			System.out.println(c[i].amount1);
+			System.out.println(c[i].amount2);
+			System.out.println(c[i].profit);
 		}
 	}
+
+	public static void calculateProfit (){
+		
+		profit = amount1 - amount2 ; 
+	}
+
+	public static void buyItems (double price1,double price2,int n){
+		amount1 = price1*n + amount1;
+		amount2 = price2*n + amount2;
+
+	}
+
+	public reduceProfit (){
+		
+	}
+
+
+
+
 
 }
